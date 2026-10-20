@@ -43,7 +43,7 @@ the base model, and `setup_anndata` takes the same keys as the base model.
 Requires Python ≥ 3.10 and scvi-tools 1.4 (tested with scvi-tools 1.4.2, PyTorch 2.14).
 
 ```bash
-git clone https://github.com/<user>/coded-scvi.git
+git clone https://github.com/xshen-jpg/coded-scvi.git
 cd coded-scvi
 pip install -e .
 ```
