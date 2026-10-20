@@ -5,10 +5,13 @@ This package replaces the innermost Gaussian latent of two [scvi-tools](https://
 prior and posterior of that one latent change. The encoder trunk, the decoder and, in MrVI, the
 sample-aware pathway are the base model's own.
 
-```
-counts x_n ──► encoder ──► K bits (+ repetition code) ──► smoothed codeword ζ_n ──► decoder ──► x̂_n
-                           └────────── the only change: replaces the Gaussian z_n / u_n ──────────┘
-```
+<p align="center">
+  <img src="docs/overview.png" width="520" alt="Binarizing the latent of an existing model">
+</p>
+
+*The encoder maps a cell's counts x_n to K information bits, protected by a repetition code (orange);
+the decoder reads the smoothed codeword in place of the Gaussian latent. Encoder trunk and decoder
+are those of the base model.*
 
 - Each of the K information bits is repeated r times, giving a codeword of length N_b = K·r. Each
   codeword bit is relaxed to [0, 1] with the DVAE++ smoothing transform, and the decoder reads this
