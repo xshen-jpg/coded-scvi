@@ -2,7 +2,7 @@
 
 This package replaces the innermost Gaussian latent of two [scvi-tools](https://scvi-tools.org) models,
 **scVI** and **MrVI**, with **K binary information bits protected by a repetition code**. Only the
-prior and posterior of that one latent change. The encoder trunk, the decoder and, in MrVI, the
+prior and posterior of that one latent change. The encoder and decoder networks and, in MrVI, the
 sample-aware pathway are the base model's own.
 
 <p align="center">
@@ -10,7 +10,7 @@ sample-aware pathway are the base model's own.
 </p>
 
 *The encoder maps a cell's counts x_n to K information bits, protected by a repetition code (orange);
-the decoder reads the smoothed codeword in place of the Gaussian latent. Encoder trunk and decoder
+the decoder reads the smoothed codeword in place of the Gaussian latent. Encoder and decoder networks
 are those of the base model.*
 
 - Each of the K information bits is repeated r times, giving a codeword of length N_b = K·r. Each
